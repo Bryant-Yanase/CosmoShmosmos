@@ -27,7 +27,7 @@ public class Drive extends Subsystem {
 
 
 public Drive() {
-  m_leftMaster = new TalonSRX(RobotMap.);
+  m_leftMaster = new TalonSRX(RobotMap.m_leftMaster);
   m_leftSlave1 = new TalonSRX();
   m_leftSlave2 = new TalonSRX();
   m_rightMaster = new TalonSRX();
