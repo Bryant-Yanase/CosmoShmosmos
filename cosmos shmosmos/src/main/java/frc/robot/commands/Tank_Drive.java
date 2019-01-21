@@ -10,13 +10,13 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
+import frc.robot.subsystems.Drive;
 
 
 
 public class Tank_Drive extends Command {
   public Tank_Drive() {
-    requires(Robot.Left_Drive);
-    requires(Robot.Right_Drive);
+    requires(Robot.Drive);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -25,13 +25,16 @@ public class Tank_Drive extends Command {
   @Override
   protected void initialize() {
     SmartDashboard.putString("Current Drive Command","Tank Drive");
-    Robot.Left_Drive.stopDrive();
-    Robot.Right_Drive.stopDrive();
+    Robot.Drive.stopDrive();
+
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double value;
+    value = driveLeft.GetY();
+    value = driveRight.GetY();
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -43,8 +46,7 @@ public class Tank_Drive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.Left_Drive.stopDrive();
-    Robot.Right_Drive.stopDrive();
+    Robot.Drive.stopDrive();
   }
 
   // Called when another command which requires one or more of the same

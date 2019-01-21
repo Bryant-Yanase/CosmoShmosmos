@@ -14,21 +14,29 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  * Add your docs here.
  */
-public class Left_Drive extends Subsystem {
+public class Drive extends Subsystem {
   
   private final TalonSRX m_leftMaster;
   private final TalonSRX m_leftSlave1;
   private final TalonSRX m_leftSlave2;
+  private final TalonSRX m_rightMaster;
+  private final TalonSRX m_rightSlave1;
+  private final TalonSRX m_rightSlave2;
 
 
-public Left_Drive() {
+public Drive() {
 
-  m_leftMaster = new TalonSRX(2);
-  m_leftSlave1 = new TalonSRX(3);
-  m_leftSlave2 = new TalonSRX(4);
+  m_leftMaster = new TalonSRX();
+  m_leftSlave1 = new TalonSRX();
+  m_leftSlave2 = new TalonSRX();
+  m_rightMaster = new TalonSRX();
+  m_rightSlave1 = new TalonSRX();
+  m_rightSlave2 = new TalonSRX();
 
   m_leftSlave1.follow(m_leftMaster);
   m_leftSlave2.follow(m_leftMaster);
+  m_rightSlave1.follow(m_rightMaster);
+  m_rightSlave2.follow(m_rightMaster);
 } 
 
 
@@ -45,8 +53,9 @@ public Left_Drive() {
     // setDefaultCommand(new MySpecialCommand());
   }
 
-  public void setPower(double leftPercentOutput) {
+  public void setPower(double leftPercentOutput,double rightPercentOutput) {
     m_leftMaster.set(ControlMode.PercentOutput,leftPercentOutput);
+    m_rightMaster.set(ControlMode.PercentOutput,rightPercentOutput);
 
   }
 
