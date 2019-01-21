@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
@@ -24,9 +25,9 @@ public class Drive extends Subsystem {
   private final TalonSRX m_rightSlave2;
 
 
-public Drive() {
 
-  m_leftMaster = new TalonSRX();
+public Drive() {
+  m_leftMaster = new TalonSRX(RobotMap.);
   m_leftSlave1 = new TalonSRX();
   m_leftSlave2 = new TalonSRX();
   m_rightMaster = new TalonSRX();

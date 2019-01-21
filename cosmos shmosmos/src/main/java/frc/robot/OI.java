@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 
 /**
@@ -23,6 +24,7 @@ public class OI {
 
     driveLeft = new Joystick(1);
     driveRight = new Joystick(2);
+    button2 = new JoystickButton(2);
   }
 
 
