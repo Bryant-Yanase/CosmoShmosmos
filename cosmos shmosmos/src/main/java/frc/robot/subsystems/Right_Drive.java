@@ -44,5 +44,8 @@ public Right_Drive() {
   public void setPower(double rightPercentOutput){
     m_rightMaster.set(ControlMode.PercentOutput,rightPercentOutput);
   }
+
+public void stopDrive() {
+}
 }
 

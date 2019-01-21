@@ -49,4 +49,12 @@ public Left_Drive() {
     m_leftMaster.set(ControlMode.PercentOutput,leftPercentOutput);
 
   }
+
+
+
+
+
+
+public void stopDrive() {
+}
 }

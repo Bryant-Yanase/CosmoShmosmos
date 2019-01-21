@@ -8,9 +8,15 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.Robot;
 
-public class Drive_Forward extends Command {
-  public Drive_Forward() {
+
+
+public class Tank_Drive extends Command {
+  public Tank_Drive() {
+    requires(Robot.Left_Drive);
+    requires(Robot.Right_Drive);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -18,6 +24,9 @@ public class Drive_Forward extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    SmartDashboard.putString("Current Drive Command","Tank Drive");
+    Robot.Left_Drive.stopDrive();
+    Robot.Right_Drive.stopDrive();
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -34,11 +43,14 @@ public class Drive_Forward extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.Left_Drive.stopDrive();
+    Robot.Right_Drive.stopDrive();
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }
