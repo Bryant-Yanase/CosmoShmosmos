@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
@@ -19,7 +20,7 @@ public class Arm extends Subsystem {
 
 public Arm() {
 
-  m_Arm = new TalonSRX(1);
+  m_Arm = new TalonSRX(RobotMap.arm);
 }
 
 
@@ -31,4 +32,5 @@ public Arm() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
+  
 }

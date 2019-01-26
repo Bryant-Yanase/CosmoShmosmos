@@ -28,11 +28,11 @@ public class Drive extends Subsystem {
 
 public Drive() {
   m_leftMaster = new TalonSRX(RobotMap.m_leftMaster);
-  m_leftSlave1 = new TalonSRX();
-  m_leftSlave2 = new TalonSRX();
-  m_rightMaster = new TalonSRX();
-  m_rightSlave1 = new TalonSRX();
-  m_rightSlave2 = new TalonSRX();
+  m_leftSlave1 = new TalonSRX(RobotMap.m_leftSlave1);
+  m_leftSlave2 = new TalonSRX(RobotMap.m_leftSlave2);
+  m_rightMaster = new TalonSRX(RobotMap.m_rightMaster);
+  m_rightSlave1 = new TalonSRX(RobotMap.m_rightSlave1);
+  m_rightSlave2 = new TalonSRX(RobotMap.m_rightSlave2);
 
   m_leftSlave1.follow(m_leftMaster);
   m_leftSlave2.follow(m_leftMaster);

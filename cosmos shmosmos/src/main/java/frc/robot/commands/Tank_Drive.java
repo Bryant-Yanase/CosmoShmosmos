@@ -33,8 +33,7 @@ public class Tank_Drive extends Command {
   @Override
   protected void execute() {
     double value;
-    value = Robot.driveLeft.GetY();
-    value = Robot.driveRight.GetY();
+    value = Robot.Drive.GetY();
   }
 
   // Make this return true when this Command no longer needs to run execute()

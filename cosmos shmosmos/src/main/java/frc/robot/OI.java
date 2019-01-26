@@ -20,18 +20,20 @@ public class OI {
 
   public Joystick driveLeft;
   public Joystick driveRight;
+  public Button Joystick button;
+  }
 
   public OI() {
 
     driveLeft = new Joystick(1);
     driveRight = new Joystick(2);
-    Button leftjoy = new Joystick(1);
-    leftjoy = new Button(2);
+    button = new Button Joystick(3);
+    
   }
 
 
   
-  }
+}
 
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
@@ -60,4 +62,7 @@ public class OI {
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
+
+
+
 
